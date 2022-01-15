@@ -17,5 +17,3 @@ rootDir.walk()
         .forEach {
             include(":${it.name}")
         }
-include(":data")
-include(":presentation")

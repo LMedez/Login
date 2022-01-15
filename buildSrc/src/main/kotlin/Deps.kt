@@ -4,6 +4,7 @@ object Deps {
             private const val VERSION = "2.4.0"
             const val COMPILER = "androidx.room:room-compiler:$VERSION"
             const val RUNTIME = "androidx.room:room-runtime:$VERSION"
+            const val COMMON = "androidx.room:room-common:$VERSION"
             const val ROOM_KTX = "androidx.room:room-ktx:$VERSION"
         }
 
