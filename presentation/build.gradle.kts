@@ -9,6 +9,7 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":common"))
     implementation(Deps.Koin.ANDROID)
     implementation(Deps.Kotlinx.Coroutines.CORE)
     implementation(Deps.AndroidX.Lifecycle.VIEWMODEL_KTX)
