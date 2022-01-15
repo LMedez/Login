@@ -4,9 +4,9 @@ plugins {
 }
 
 android {
-
 }
 
 dependencies {
+    implementation(project(":domain"))
     implementation(Deps.Koin.ANDROID)
 }
