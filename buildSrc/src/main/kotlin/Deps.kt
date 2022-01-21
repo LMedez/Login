@@ -60,7 +60,7 @@ object Deps {
 
     object Kotlinx {
         object Coroutines {
-            private const val VERSION = "1.5.0"
+            const val VERSION = "1.5.0"
             const val CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$VERSION"
             const val ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$VERSION"
         }

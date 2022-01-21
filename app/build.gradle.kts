@@ -13,10 +13,13 @@ dependencies {
     implementation(project(":presentation"))
     implementation(project(":data"))
     implementation(project(":common"))
+    implementation(project(":ui:home"))
+    implementation(project(":ui:login"))
 
     implementation(kotlin("stdlib"))
     implementation(Deps.AndroidX.AppCompat.APPCOMPAT)
     implementation(Deps.Google.Material.MATERIAL)
     implementation(Deps.AndroidX.ConstraintLayout.CL)
     implementation(Deps.Koin.ANDROID)
+
 }
