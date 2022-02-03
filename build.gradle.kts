@@ -11,6 +11,7 @@ buildscript {
         google()
         mavenCentral()
     }
+
     dependencies {
         classpath(BuildPlugins.ANDROID)
         classpath(BuildPlugins.GMS)
