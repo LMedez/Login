@@ -1,6 +1,6 @@
 # Android build
 
-name: CI
+name: build
 
 # Controls when the workflow will run
 on:

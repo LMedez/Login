@@ -16,8 +16,6 @@ buildscript {
         classpath(BuildPlugins.GMS)
         classpath(BuildPlugins.SAFE_ARGS)
         classpath(kotlin(module = BuildPlugins.Kotlin.ID, version = BuildPlugins.Kotlin.VERSION))
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
-
     }
 }
 
@@ -102,7 +100,4 @@ fun BaseExtension.applyBaseCommons() = apply {
             dimension = "type"
         }
     }
-}
-
-fun DependencyHandler.s() = apply {
 }
