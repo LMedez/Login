@@ -124,7 +124,7 @@ fun BaseExtension.applyBaseCommons() = apply {
 
         create("prod") {
             dimension = "type"
-            signingConfig = signingConfigs.getByName("release")
+            //signingConfig = signingConfigs.getByName("release")
         }
     }
 }
