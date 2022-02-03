@@ -52,6 +52,7 @@ fun Project.disableVariants() {
 
 fun AppExtension.applyAppCommons() = apply {
     applyBaseCommons()
+
     defaultConfig {
         applicationId = "com.luc.basicstartmodularappandroid"
         versionCode = 1
@@ -61,6 +62,8 @@ fun AppExtension.applyAppCommons() = apply {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
+            isShrinkResources = true
+            isDebuggable = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
 
@@ -69,6 +72,8 @@ fun AppExtension.applyAppCommons() = apply {
             isMinifyEnabled = false
         }
     }
+
+
 }
 
 fun LibraryExtension.applyLibraryCommons() = apply {
@@ -76,6 +81,34 @@ fun LibraryExtension.applyLibraryCommons() = apply {
 }
 
 fun BaseExtension.applyBaseCommons() = apply {
+    // Create a variable called keystorePropertiesFile, and initialize it to your
+    // keystore.properties file, in the rootProject folder.
+    val keystorePropertiesFile = rootProject.file("keystore.properties")
+
+    // Initialize a new Properties() object called keystoreProperties.
+    val keystoreProperties = java.util.Properties()
+
+    // Load your keystore.properties file into the keystoreProperties object.
+    keystoreProperties.load(java.io.FileInputStream(keystorePropertiesFile))
+
+    /*
+    * Create the keystore.properties file to save the sign in configs
+    * with the following schema:
+    * password=(your password) e.g: 123456
+    * keyPassword=(your key password) e.g: 123456
+    * keyAlias=(your alias) e.g: app
+    * storeFile=(absolute path of you keystore.jks file) e.g: D:\\Android\\Projects\\KeyStore\\app-keystore.jks
+    *
+    * */
+    signingConfigs {
+        create("release") {
+            keyAlias = keystoreProperties.getProperty("keyAlias")
+            keyPassword = keystoreProperties.getProperty("keyPassword")
+            storeFile = file(keystoreProperties.getProperty("storeFile"))
+            storePassword = keystoreProperties.getProperty("password")
+        }
+    }
+
     compileSdkVersion(Android.Sdk.COMPILE)
     defaultConfig.apply {
         minSdk = Android.Sdk.MIN
@@ -98,6 +131,7 @@ fun BaseExtension.applyBaseCommons() = apply {
 
         create("prod") {
             dimension = "type"
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 }
