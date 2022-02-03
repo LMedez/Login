@@ -81,6 +81,7 @@ fun LibraryExtension.applyLibraryCommons() = apply {
 }
 
 fun BaseExtension.applyBaseCommons() = apply {
+
     // Create a variable called keystorePropertiesFile, and initialize it to your
     // keystore.properties file, in the rootProject folder.
     val keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -91,15 +92,6 @@ fun BaseExtension.applyBaseCommons() = apply {
     // Load your keystore.properties file into the keystoreProperties object.
     keystoreProperties.load(java.io.FileInputStream(keystorePropertiesFile))
 
-    /*
-    * Create the keystore.properties file to save the sign in configs
-    * with the following schema:
-    * password=(your password) e.g: 123456
-    * keyPassword=(your key password) e.g: 123456
-    * keyAlias=(your alias) e.g: app
-    * storeFile=(absolute path of you keystore.jks file) e.g: D:\\Android\\Projects\\KeyStore\\app-keystore.jks
-    *
-    * */
     signingConfigs {
         create("release") {
             keyAlias = keystoreProperties.getProperty("keyAlias")
