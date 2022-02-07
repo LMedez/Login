@@ -1,11 +1,11 @@
-package com.luc.data.local
+package com.luc.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Query
 import com.luc.common.entities.UserEntity
 
 @Dao
-interface LocalDatabaseDAO {
+abstract class UserDao : BaseDao<UserEntity> {
     @Query("SELECT * FROM UserEntity WHERE id = :id")
-    suspend fun getUser(id: String) : UserEntity
+    abstract suspend fun getUser(id: String) : UserEntity
 }

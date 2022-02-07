@@ -6,7 +6,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.luc.data.DomainRepositoryImpl
 import com.luc.data.local.LocalDataSource
 import com.luc.data.local.LocalDatabase
-import com.luc.data.local.LocalDatabaseDAO
+import com.luc.data.local.dao.FooDao
+import com.luc.data.local.dao.UserDao
 import com.luc.data.remote.firebase.firestore.FirestoreData
 import com.luc.data.remote.firebase.firestore.FirestoreDataImpl
 import com.luc.domain.DomainRepository
@@ -24,12 +25,18 @@ val roomModule = module {
             .build()
     }
 
-    fun provideDatabaseDao(database: LocalDatabase): LocalDatabaseDAO {
-        return database.localDataDao()
+    fun provideUserDao(database: LocalDatabase): UserDao {
+        return database.userDao()
+    }
+
+    // TODO("change the name of method for the corresponding entity name")
+    fun provideFooDao(database: LocalDatabase): FooDao {
+        return database.fooDao()
     }
 
     single { provideDatabase(androidApplication()) }
-    single { provideDatabaseDao(get()) }
+    single { provideUserDao(get()) }
+    single { provideFooDao(get()) }
 }
 
 val repositoryModule = module {

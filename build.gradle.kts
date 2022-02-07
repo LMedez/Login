@@ -52,12 +52,17 @@ fun Project.disableVariants() {
 }
 
 fun AppExtension.applyAppCommons() = apply {
-    applyBaseCommons()
 
     defaultConfig {
         applicationId = "com.luc.basicstartmodularappandroid"
         versionCode = 1
         versionName = "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += mapOf("room.schemaLocation" to "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -74,7 +79,7 @@ fun AppExtension.applyAppCommons() = apply {
         }
     }
 
-
+    applyBaseCommons()
 }
 
 fun LibraryExtension.applyLibraryCommons() = apply {
@@ -101,6 +106,8 @@ fun BaseExtension.applyBaseCommons() = apply {
             storePassword = keystoreProperties.getProperty("password")
         }
     }
+
+
 
     compileSdkVersion(Android.Sdk.COMPILE)
     defaultConfig.apply {
