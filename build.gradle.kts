@@ -54,9 +54,9 @@ fun Project.disableVariants() {
 fun AppExtension.applyAppCommons() = apply {
 
     defaultConfig {
-        applicationId = "com.luc.basicstartmodularappandroid"
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Android.Client.APP_ID
+        versionCode = Android.Client.VERSION_CODE
+        versionName = Android.Client.VERSION_NAME
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -106,8 +106,6 @@ fun BaseExtension.applyBaseCommons() = apply {
             storePassword = keystoreProperties.getProperty("password")
         }
     }
-
-
 
     compileSdkVersion(Android.Sdk.COMPILE)
     defaultConfig.apply {
