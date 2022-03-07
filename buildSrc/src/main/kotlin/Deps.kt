@@ -10,6 +10,7 @@ object Deps {
 
         object Navigation {
             private const val VERSION = "2.3.5"
+            const val FRAGMENT_KTX = "androidx.navigation:navigation-fragment-ktx:$VERSION"
             const val FRAGMENT = "androidx.navigation:navigation-fragment:$VERSION"
             const val UI = "androidx.navigation:navigation-ui:$VERSION"
             const val UI_KTX = "androidx.navigation:navigation-ui-ktx:$VERSION"
@@ -51,10 +52,28 @@ object Deps {
         }
     }
 
+    object Glide {
+        private const val VERSION = "4.13.0"
+        const val GLIDE = "com.github.bumptech.glide:glide:$VERSION"
+        const val PROCESSOR = "com.github.bumptech.glide:compiler:$VERSION"
+    }
+
     object Google {
+
         object Material {
             private const val VERSION = "1.4.0-beta01"
             const val MATERIAL = "com.google.android.material:material:$VERSION"
+        }
+
+        object Gson {
+            private const val VERSION = "2.8.5"
+            const val GSON = "com.google.code.gson:gson:$VERSION"
+        }
+
+        object PlayCore {
+            private const val VERSION = "1.10.3"
+            const val CORE = "com.google.android.play:core:$VERSION"
+            const val KTX = "com.google.android.play:core-ktx:1.8.1"
         }
     }
 
