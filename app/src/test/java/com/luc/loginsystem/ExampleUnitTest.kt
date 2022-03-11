@@ -1,4 +1,4 @@
-package com.luc.basicstartmodularappandroid
+package com.luc.loginsystem
 
 import org.junit.Test
 

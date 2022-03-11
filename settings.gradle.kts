@@ -17,6 +17,3 @@ rootDir.walk()
         .forEach {
             include(":${it.name}")
         }
-
-include("ui:login")
-include("ui:home")

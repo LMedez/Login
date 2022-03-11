@@ -6,7 +6,7 @@ object Android {
     }
 
     object Client {
-        const val APP_ID = "com.luc.basicstartmodularappandroid"
+        const val APP_ID = "com.luc.loginsystem"
         const val VERSION_CODE = 1
         const val VERSION_NAME = "1.0"
     }

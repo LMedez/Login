@@ -19,8 +19,6 @@ dependencies {
     implementation(project(":presentation"))
     implementation(project(":data"))
     implementation(project(":common"))
-    implementation(project(":ui:home"))
-    implementation(project(":ui:login"))
 
     implementation(kotlin("stdlib"))
     implementation(Deps.AndroidX.Navigation.FRAGMENT_KTX)
@@ -31,6 +29,7 @@ dependencies {
     implementation(Deps.Koin.ANDROID)
 
     implementation(Deps.Glide.GLIDE)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(Deps.Glide.PROCESSOR)
 
 }

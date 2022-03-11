@@ -1,7 +1,7 @@
 package com.luc.domain.usecases
 
-import com.luc.domain.DomainRepository
+import com.luc.domain.LoginRepository
 
-class GetUserUseCase(private val domainRepository: DomainRepository) {
-    suspend fun getUser(id: String) = domainRepository.getUser(id)
+class GetUserUseCase(private val loginRepository: LoginRepository) {
+    suspend fun getUser(id: String) = loginRepository.getUser(id)
 }

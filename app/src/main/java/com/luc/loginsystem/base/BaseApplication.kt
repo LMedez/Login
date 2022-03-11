@@ -1,4 +1,4 @@
-package com.luc.basicstartmodularappandroid.base
+package com.luc.loginsystem.base
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
