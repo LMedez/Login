@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id(ModulePlugins.GOOGLE_SERVICES)
+    id(ModulePlugins.SAFE_ARGS)
 
 
 }

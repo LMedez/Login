@@ -22,8 +22,7 @@
     </style>
 
     <style name="TextAppearance.App.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/nunito_bold</item>
-        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/nunito</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="lineHeight">40sp</item>
     </style>

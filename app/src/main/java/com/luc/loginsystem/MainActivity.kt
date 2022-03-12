@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Thread.sleep(3000)
+        Thread.sleep(2000)
         setTheme(R.style.Theme_loginsystem)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
