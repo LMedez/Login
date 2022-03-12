@@ -19,6 +19,7 @@ dependencies {
     implementation(project(":presentation"))
     implementation(project(":data"))
     implementation(project(":common"))
+    implementation("com.google.android.gms:play-services-auth:20.1.0")
 
     implementation(kotlin("stdlib"))
     implementation(Deps.AndroidX.Navigation.FRAGMENT_KTX)

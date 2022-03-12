@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+
         android:id="@+id/root"
         android:orientation="vertical"
         android:layout_width="match_parent"

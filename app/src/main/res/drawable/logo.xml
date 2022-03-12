@@ -17,7 +17,7 @@
         </shape>
     </item>
 
-    <item android:width="40dp" android:height="40dp" android:drawable="@mipmap/logo">
+    <item android:width="50dp" android:height="50dp" android:drawable="@mipmap/logo">
 
     </item>
 

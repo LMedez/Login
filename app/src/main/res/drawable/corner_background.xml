@@ -5,7 +5,7 @@
             <solid android:color="?attr/colorSurface" />
 
             <corners
-                android:topLeftRadius="80dp" />
+                android:topLeftRadius="60dp" />
 
         </shape>
     </item>
