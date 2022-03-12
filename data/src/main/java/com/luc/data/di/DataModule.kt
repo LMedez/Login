@@ -48,6 +48,7 @@ val repositoryModule = module {
             firestore = get(),
         )
     }
+
     factory { LocalDataSource(get()) }
     factory<LoginRepository> { LoginRepositoryImpl(firestoreData = get(), get(), get()) }
 }

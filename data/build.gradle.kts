@@ -2,7 +2,6 @@ plugins {
     id(ModulePlugins.ANDROID_LIBRARY)
     kotlin("android")
     kotlin("kapt")
-    id(ModulePlugins.GOOGLE_SERVICES)
 }
 
 android {
