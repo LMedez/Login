@@ -141,13 +141,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                             .observe(viewLifecycleOwner) {
                                 when (it) {
                                     is NetworkStatus.Success ->
-                                        Toast.makeText(
-                                            requireContext(),
-                                            "Email:  ${it.data.email}, Provider: ${it.data.providerType.name}",
-                                            Toast.LENGTH_LONG
-                                        ).show()
-
-
+                                        findNavController().navigate(
+                                            LoginFragmentDirections
+                                                .actionLoginFragmentToSettingsFragment(it.data))
                                     is NetworkStatus.Error -> Toast.makeText(
                                         requireContext(),
                                         it.message,

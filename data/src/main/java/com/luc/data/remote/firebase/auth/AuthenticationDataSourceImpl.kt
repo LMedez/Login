@@ -79,10 +79,13 @@ class AuthenticationDataSourceImpl(private val firebaseAuth: FirebaseAuth) :
 
 fun FirebaseUser.asUserProfile(): UserProfile {
     var provider: ProviderType = ProviderType.BASIC
+    var userName = ""
     providerData.forEach {
         if (it.providerId == "google.com") provider = ProviderType.GOOGLE
+        userName = it.displayName?:"No Username"
     }
 
-    return UserProfile(this.uid, this.email ?: "No email", this.photoUrl, provider)
+
+    return UserProfile(this.uid, userName, this.email ?: "No email", this.photoUrl, provider)
 
 }

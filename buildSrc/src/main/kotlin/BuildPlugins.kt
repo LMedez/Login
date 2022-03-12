@@ -2,6 +2,7 @@ object BuildPlugins {
     const val ANDROID = "com.android.tools.build:gradle:7.0.4"
     const val SAFE_ARGS = "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
     const val GMS = "com.google.gms:google-services:4.3.8"
+    const val PARCELIZE = "kotlin-parcelize"
 
     interface BuildPlugin {
         val ID: String

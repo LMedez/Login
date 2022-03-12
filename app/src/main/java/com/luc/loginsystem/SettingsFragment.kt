@@ -1,24 +1,21 @@
 package com.luc.loginsystem
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
-import androidx.fragment.app.setFragmentResult
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.transition.platform.MaterialSharedAxis
 import com.luc.loginsystem.base.BaseFragment
-import com.luc.loginsystem.databinding.FragmentSignUpBinding
+import com.luc.loginsystem.databinding.FragmentSettingsBinding
 
 
-class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding::inflate) {
-
+class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {
+    val args: SettingsFragmentArgs by navArgs()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val userProfile = args.userProfile
         enterTransition =
             MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true).addTarget(binding.root)
         returnTransition =
@@ -28,15 +25,9 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
             MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true).addTarget(binding.root)
         reenterTransition =
             MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ false).addTarget(binding.root)
-        binding.popBack.setOnClickListener {
-            setFragmentResult("requestKey", bundleOf("bundleKey" to false))
-            findNavController().popBackStack()
-        }
-
-        binding.signin.setOnClickListener {
-            setFragmentResult("requestKey", bundleOf("bundleKey" to false))
-            findNavController().popBackStack()
-        }
+        binding.username.text = userProfile.userName
+        binding.email.text = userProfile.email
+        binding.imageUrl = userProfile.photoUri.toString()
     }
 
 }

@@ -50,7 +50,9 @@
 
     <style name="TextAppearance.App.Subtitle3" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textSize">14sp</item>
-        <item name="fontFamily">@font/nunito_medium</item>
+        <item name="fontFamily">@font/nunito_bold</item>
+        <item name="android:textStyle">bold</item>
+
     </style>
 
     <style name="TextAppearance.App.Body1" parent="TextAppearance.MaterialComponents.Body1">
