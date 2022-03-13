@@ -1,4 +1,4 @@
-name: Minimal Android CI Workflow
+name: Build
 
 # Controls when the workflow will run
 on:
@@ -25,6 +25,13 @@ jobs:
         uses: actions/setup-java@v1
         with: 
           java-version: 11
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1.1
+        with:
+          fileDir: './secrets'
+          fileName: 'google-services.json'
+          encodedString: ${{ secrets.GOOGLE_SERVICES_KEY }}
       - name: Build Project
         run: ./gradlew build
 
