@@ -29,7 +29,7 @@ jobs:
         id: decode_keystore
         uses: timheuer/base64-to-file@v1.1
         with:
-          fileDir: './secrets'
+          fileDir: './app'
           fileName: 'google-services.json'
           encodedString: ${{ secrets.GOOGLE_SERVICES_KEY }}
       - name: Build Project
